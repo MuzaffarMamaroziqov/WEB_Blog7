@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{%block content %}
+<div>
+    <h2>{{product.title}}</h2>
+    <h3> By {{product.author}}</h3>
+    <p>{{product.body}}</p>
+
+    <img src="{{product.imageURL}}" alt="mexanika" width="150" height="150">
+    <h3>{{product.price}} so'm </h3>
+
+<div>
+
+{% if user == product.author %}
+    <a href="{%url 'update_post' product.pk %}">Postni tahrirlash</a>
+    <br>
+    <a href="{%url 'delete_post' product.pk%}">Postni o'chirish</a>
+{%endif%}
+</div>
+</div>
+{%endblock%}
